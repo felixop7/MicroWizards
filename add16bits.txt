@@ -1,0 +1,14 @@
+;Write a program to add Two 16 bit numbers with carry.
+
+LHLD 2003H
+XCHG
+LHLD 2005H
+MVI C,00H
+DAD D
+JNC AHEAD
+INR C
+AHEAD:  SHLD 2007H
+MOV A,C
+STA 2009H
+
+hlt
